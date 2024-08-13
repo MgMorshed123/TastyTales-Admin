@@ -5,11 +5,14 @@ import { Route, Routes } from "react-router-dom";
 import List from "./pages/List/List";
 import Order from "./pages/Order/Order";
 import Add from "./pages/Add/Add";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <>
       <div>
+        <ToastContainer></ToastContainer>
         <Navbar></Navbar>
         <hr />
 

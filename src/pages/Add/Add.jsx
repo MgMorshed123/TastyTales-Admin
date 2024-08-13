@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Add.css";
 import { assets } from "../../assets/admin_assets/assets";
+import { toast } from "react-toastify";
 
 const Add = () => {
   const [image, setImage] = useState(false);
@@ -34,9 +35,9 @@ const Add = () => {
     formData.append("category", data.category);
     formData.append("image", image);
 
-    const reponse = await axios.post(`${url}/api/food/add`, formData);
+    const response = await axios.post(`${url}/api/food/add`, formData);
 
-    if (Response.data.success) {
+    if (response.data.success) {
       setData({
         name: "",
         description: "",
@@ -45,6 +46,9 @@ const Add = () => {
       });
 
       setImage(false);
+      toast.success(response.data.message);
+    } else {
+      toast.error(response.data.error);
     }
   };
 
