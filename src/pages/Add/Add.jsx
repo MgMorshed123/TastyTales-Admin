@@ -3,7 +3,7 @@ import "./Add.css";
 import { assets } from "../../assets/admin_assets/assets";
 import { toast } from "react-toastify";
 
-const Add = () => {
+const Add = ({ url }) => {
   const [image, setImage] = useState(false);
   const [data, setData] = useState({
     name: "",
@@ -27,7 +27,6 @@ const Add = () => {
     event.preventDefault();
 
     const formData = new FormData();
-    const url = "http://localhost:5173";
 
     formData.append("name", data.name);
     formData.append("description", data.description);
