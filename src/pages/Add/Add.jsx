@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Add.css";
 import { assets } from "../../assets/admin_assets/assets";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 const Add = ({ url }) => {
   const [image, setImage] = useState(false);
